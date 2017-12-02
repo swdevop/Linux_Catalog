@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body>
+<div class="row top-menu">
+{#        <div class="col-md-6">#}
+{#            <a href="{{url_for('hello_world')}}">#}
+{#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Item Catalog#}
+{#            </a>#}
+{#        </div>#}
+        <div class="col-md-6 text-right">
+                        {%if 'username' not in session %}
+                <a href="{{url_for('showLogin')}}">Click Here to Login </a>
+                {% else %}
+                <a href="{{url_for('disconnect')}}">Logout </a>
+                {% endif %}
+
+        </div>
+    </div>
+<h1> Are you sure you want to delete {{item.name}}? </h1>
+
+<form action="#" method = 'post'>
+
+<input type='submit', value = 'Delete'>
+
+
+
+
+</form>
+
+<a href = '#'> Cancel </a>
+</body>
+
+</html>
